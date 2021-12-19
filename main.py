@@ -55,7 +55,7 @@ async def start(bot, update):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("⭕ عضویت ⭕", url=f"https://t.me/{UPDATES_CHANNEL}")
+                            InlineKeyboardButton("⭕ عضویت ⭕", url=f"https://t.me/seriesplus1")
                         ]
                     ]
                 ),

@@ -48,7 +48,21 @@ async def start(bot, update):
         reply_markup=reply_markup
     )
 
-   
+   except UserNotParticipant:
+            await bot.send_message(
+                chat_id=update.chat.id,
+                text="**• برای استفاده از ربات باید در کانال زیر عضو شوید سپس /start را کلیک کنید.👇**",
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("⭕ عضویت ⭕", url=f"https://t.me/{UPDATES_CHANNEL}")
+                        ]
+                    ]
+                ),
+                parse_mode="markdown"
+            )
+            return
+
 @Bot.on_message(filters.private & filters.audio)
 async def tag(bot, m):
     fname = m.audio.file_name
